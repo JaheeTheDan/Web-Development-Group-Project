@@ -1,0 +1,195 @@
+header {
+  background-color: var(--main-colour);
+
+  padding: 140px 0;
+}
+
+header p {
+  text-align: center;
+  width: 70%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+
+#courses_sect img, #mentorship_sect img, #code_review_sect img{
+  width: 100%;
+  border-radius: 1em 1em 0 0;
+  padding-bottom: 10px;
+
+}
+#courses > div, #mentorship_programs > div, #code_reviews > div{
+  position: relative;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+#courses_sect button, #mentorship_sect button, #code_review_sect button{
+  display: flex;
+  margin: 10px auto 0;
+
+
+}
+
+#courses_sect #courses,
+#mentorship_sect #mentorship_programs,
+#code_review_sect #code_reviews {
+  display: flex;
+  justify-content: center;
+}
+
+#courses_sect #courses > div,
+#mentorship_sect #mentorship_programs > div,
+#code_review_sect #code_reviews > div {
+  padding: 25px;
+  margin: 20px;
+  width: 300px;
+  
+  background-color: var(--accent-colour-3);
+  border-radius: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+#courses_sect #courses > div:hover,
+#mentorship_sect #mentorship_programs > div:hover,
+#code_review_sect #code_reviews > div:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+#courses_sect h1 {
+  text-align: center;
+}
+
+#courses_sect > p{
+  width: 60%;
+  margin: 10px auto 30px;
+  text-align: center;
+}
+
+#courses_sect {
+  margin: 60px 0;
+}
+
+#code_review_sect, #mentorship_sect {
+  margin: 100px 0;
+  padding: 50px 0;
+}
+
+#mentorship_sect {
+  background-color: var(--accent-colour-1);
+}
+#mentorship_sect > div , #code_review_sect > div{
+  width: 1480px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+#code_review_sect > div{
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1500px) {
+  #courses_sect #courses {
+    flex-wrap: wrap;
+  }
+
+  #mentorship_sect > div, #code_review_sect > div {
+    width: min-content !important;
+    flex-wrap: wrap;
+  }
+
+  #mentorship_sect > div > div:first-child, #code_review_sect > div > div:first-child {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #mentorship_sect #mentorship_programs, #code_review_sect #code_reviews {
+    margin: 0 auto;
+  }
+}
+
+
+
+
+.popup > div {
+  margin: auto;
+
+  background-color: var(--white);
+  border-radius: 1em;
+
+  padding: 20px;
+  width: 60%;
+  min-width: 750px;
+  max-width: 1000px;
+
+  min-height: 60vh;
+}
+
+.popup .content {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+
+  position: relative;
+}
+
+.popup .content > * {
+  width: 50%;
+  margin: 20px;
+}
+
+.popup .content .carousel{
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.popup .content img{
+  display: flex;
+  margin: auto;
+
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.popup .content img.active {
+  opacity: 1;
+  height: 100%;
+  object-fit: cover;
+}
+
+.popup .item_price{
+  display: block;
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: larger;
+}
+
+.popup .content >div:last-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup .content >div:last-child button{
+  display: flex;
+  margin: 20px auto 0;
+}
+
+
+.popup .close_btn {
+  width: 2em;
+  position: absolute;
+  top: -10px;
+  right: -2px;
+  cursor: pointer;
+}
+
