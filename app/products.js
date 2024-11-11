@@ -1,4 +1,5 @@
 /**
+ * Jaheem Shaw & Victoria Pryce: Professional retards
  * This function generates an array of Product objects.
  *
  * @function generate_products
