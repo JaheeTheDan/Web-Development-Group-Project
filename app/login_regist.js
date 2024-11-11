@@ -12,14 +12,44 @@ function registerNewUser(formElement) {
     // Get the signup form data
     const sign_up_form = new FormData(formElement);
 
-    // Convert the FormData object to a plain JavaScript object for easier manipulation
-    formDataObj ={};
-    sign_up_form.forEach((value, key) => (formDataObj[key] = value));
-    console.log(formDataObj);
-
     // Retrieve the list of registered users from local storage
-    let list_of_users = JSON.parse(localStorage.getItem("list_of_register_users"));
+    let registrationData = JSON.parse(localStorage.getItem("registrationData"));
 
+
+    let formDataObj ={};
+
+    try {
+        sign_up_form.forEach((value, key) => {
+            // Check if any field is empty and if so will throw an error
+            if (!value){
+                const error = new Error('Please fill all fields'); 
+                throw error;
+            } else if (key === 'trn' && registrationData[value]){
+                // Check if the trn already exists    
+                const error = new Error('TRN already exists.'); 
+                throw error;
+            
+            } else if (key === 'password' && value.length < 8){
+                // Check if the password is 8 char long
+                const error = new Error('Password must be 8 characters long.'); 
+                throw error;
+                
+            } else if (key === 'age' && value < 18){
+                // Check if the age is greater than 18 
+                const error = new Error('You must be at least 18 years old.'); 
+                throw error;                
+            }
+                            
+            // Convert the form data to a plain JavaScript object
+            formDataObj[key] = value;
+        });
+    } catch (error) {
+        alert(error.message);
+        return;
+    }
+    
+    
+    
     // Add the new user to the list with an empty cart
     list_of_users[username] = {"cart" : []};
 
@@ -28,57 +58,65 @@ function registerNewUser(formElement) {
         list_of_users[username][key]=value;
     };
 
-    // Display a success message to the user
-    alert("Account made successfully.");
-
+    // Validate the username and password
+    if (!formDataObj.username ||!formDataObj.password) {
+        alert("Please enter both username and password.");
+        return;
+    }
+    
     // Store the updated list of registered users in local storage
     localStorage.setItem("list_of_register_users", JSON.stringify(list_of_users));
 
     // Set the login status and the currently logged-in user in local storage
     localStorage.setItem("is_a_user_login", true);
     localStorage.setItem("login_user", JSON.stringify(list_of_users[username]));
+    // Display a success message to the user
+    alert("Account made successfully.");
+
 
     // Redirect the user to the home page
     window.location.href = "index.html";
 }
 
-const login_btn = document.getElementById("login_btn");
-const sign_up_btn = document.getElementById("sign_up_btn");
 
 
-registerNewUser();
-
-login_btn.addEventListener("click", function(event) {
+/**
+ * This function handles the login process for a user. It retrieves the TRN and password from the login form,
+ * validates the input, and checks if the TRN and password match any of the registered users in local storage.
+ * If successful, the user is redirected to the home page. If the login fails 3 times, the user is redirected to an error page.
+ *
+ * @param {HTMLElement} formElement - The HTML form element containing the login form data.
+ * @returns {void}
+ */
+function loginUser(formElement){
     let try_login_count = 0;
-    // Prevent the form from submitting
-    event.preventDefault();
 
-    const login_form = new FormData(document.getElementById("login"));
-    const username = login_form.get("username");
+    const login_form = new FormData(formElement);
+    const trn = login_form.get("trn");
     const password = login_form.get("password");
+
 
     let list_of_users = JSON.parse(localStorage.getItem("list_of_register_users"));
 
-    // Validate the username and password
-    if (!username ||!password) {
-        alert("Please enter both username and password.");
+    // Validate the trn and password
+    if (!trn ||!password) {
+        alert("Please enter both trn and password.");
         return;
     }
 
-
-    // Check if the username and password match any of the registered users in the list
-    if (!list_of_users[username]) {
-        alert("Invalid username, doesn't match any of the registered users");
+    // Check if the trn and password match any of the registered users in the list
+    if (!list_of_users[trn]) {
+        alert("Invalid trn, doesn't match any of the registered users");
         return;
-    }else if (list_of_users[username].password === password){
+    }else if (list_of_users[trn].password === password){
         try_login_count = 0;
         alert("You logged in successfully");
         localStorage.setItem("is_a_user_login", true);
-        localStorage.setItem("login_user", JSON.stringify(list_of_users[username]));
+        localStorage.setItem("login_user", JSON.stringify(list_of_users[trn]));
         window.location.href = "index.html";
     }else{
         try_login_count++;
-        alert("Invalid username or password.");
+        alert("Invalid trn or password.");
     }
 
     // If fail 3 times, send user to the error page.
@@ -86,47 +124,4 @@ login_btn.addEventListener("click", function(event) {
         window.location.href = "error.html";
         return;
     }
-
-});
-
-
-sign_up_btn.addEventListener("click", function(event) {
-    // Prevent the form from submitting
-    event.preventDefault();
-
-    const sign_up_form = new FormData(document.getElementById("signup"));
-    
-    const full_name = sign_up_form.get("full_name");
-    const username = sign_up_form.get("username");
-    const password = sign_up_form.get("password");
-
-    
-    let list_of_users = JSON.parse(localStorage.getItem("list_of_register_users"));
-    
-    // Validate the username and password
-    if (!full_name || !username ||!password) {
-        alert("Please enter all fields.");
-        return;
-    }
-
-    // Check if the username already exists
-    if (list_of_users[username]) {
-        alert("Username already exists. Please choose a different one.");
-        return;
-    }
-    
-    // Add the user to the list
-    list_of_users[username] = {"cart" : []};
-    for ([key, value] of sign_up_form){
-        list_of_users[username][key]=value;
-    };
-
-    
-    alert("Account made successfully.");
-    
-    localStorage.setItem("list_of_register_users", JSON.stringify(list_of_users));
-    localStorage.setItem("is_a_user_login", true);
-    localStorage.setItem("login_user", JSON.stringify(list_of_users[username]));
-
-    window.location.href = "index.html";
-});
+}
