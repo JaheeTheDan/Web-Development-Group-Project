@@ -97,7 +97,14 @@ function populate_cart(){
         `;
         cart_items.children.item("tbody").append(row);
     }
+    calculateTotalAfterTax();
 
+
+}
+function calculateTotalAfterTax() {
+    const taxRate = 0.10;
+    const totalAfterTax = totalAmount + (totalAmount * taxRate);
+    document.getElementById('total-after-tax').textContent = totalAfterTax.toFixed(2);
 }
 
 function show_cart(event){
