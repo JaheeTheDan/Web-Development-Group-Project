@@ -4,7 +4,8 @@
  * This function is responsible for registering a new user by collecting user data from the signup form,
  * validating the input, adding the user to the list of registered users, and storing the updated list in local storage.
  * After successful registration, the user is redirected to the home page.
- *
+ * 
+ * @author Jaheem Shaw 2205642
  * @param {HTMLElement} formElement - The HTML form element containing the signup form data.
  * @returns {void}
  */
@@ -14,6 +15,7 @@ function registerNewUser(formElement) {
 
     // Retrieve the list of registered users from local storage
     let registrationData = JSON.parse(localStorage.getItem("registrationData"));
+    let user_trn = sign_up_form.get("trn");
 
 
     let formDataObj ={};
@@ -51,25 +53,21 @@ function registerNewUser(formElement) {
     
     
     // Add the new user to the list with an empty cart
-    list_of_users[username] = {"cart" : []};
+    registrationData[user_trn] = {"cart" : []};
 
     // Copy the form data to the user object in the list
     for ([key, value] of sign_up_form){
-        list_of_users[username][key]=value;
+        registrationData[user_trn][key]=value;
     };
 
-    // Validate the username and password
-    if (!formDataObj.username ||!formDataObj.password) {
-        alert("Please enter both username and password.");
-        return;
-    }
+  
     
     // Store the updated list of registered users in local storage
-    localStorage.setItem("list_of_register_users", JSON.stringify(list_of_users));
+    localStorage.setItem("registrationData", JSON.stringify(registrationData));
 
     // Set the login status and the currently logged-in user in local storage
     localStorage.setItem("is_a_user_login", true);
-    localStorage.setItem("login_user", JSON.stringify(list_of_users[username]));
+    localStorage.setItem("login_user", JSON.stringify(registrationData[user_trn]));
     // Display a success message to the user
     alert("Account made successfully.");
 
@@ -84,6 +82,8 @@ function registerNewUser(formElement) {
  * This function handles the login process for a user. It retrieves the TRN and password from the login form,
  * validates the input, and checks if the TRN and password match any of the registered users in local storage.
  * If successful, the user is redirected to the home page. If the login fails 3 times, the user is redirected to an error page.
+ * 
+ * @author Victoria Pryce 
  *
  * @param {HTMLElement} formElement - The HTML form element containing the login form data.
  * @returns {void}
@@ -96,23 +96,23 @@ function loginUser(formElement){
     const password = login_form.get("password");
 
 
-    let list_of_users = JSON.parse(localStorage.getItem("list_of_register_users"));
+    let registrationData = JSON.parse(localStorage.getItem("registrationData"));
 
     // Validate the trn and password
     if (!trn ||!password) {
-        alert("Please enter both trn and password.");
+        alert("Please enter both TRN and password.");
         return;
     }
 
     // Check if the trn and password match any of the registered users in the list
-    if (!list_of_users[trn]) {
+    if (!registrationData[trn]) {
         alert("Invalid trn, doesn't match any of the registered users");
         return;
-    }else if (list_of_users[trn].password === password){
+    }else if (registrationData[trn].password === password){
         try_login_count = 0;
         alert("You logged in successfully");
         localStorage.setItem("is_a_user_login", true);
-        localStorage.setItem("login_user", JSON.stringify(list_of_users[trn]));
+        localStorage.setItem("login_user", JSON.stringify(registrationData[trn]));
         window.location.href = "index.html";
     }else{
         try_login_count++;

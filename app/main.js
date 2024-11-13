@@ -7,12 +7,12 @@ function init_local_storage(){
     const list_of_init_items_key = [
         "is_a_user_login",
         "login_user",
-        "list_of_register_users"
+        "registrationData"
     ];
 
     for (const key of list_of_init_items_key) {
 
-        if (!localStorage.getItem(key) && key === "list_of_register_users") {
+        if (!localStorage.getItem(key) && key === "registrationData") {
             // Create a new user with default credentials
             const user = {
                 username: DEFAULT_USERNAME,
@@ -57,15 +57,16 @@ function cheak_if_a_user_login() {
 
 }
 
+// TODO: Add a check_if_admin_login function
 
 function update_users_list(){
     const user_data = JSON.parse(localStorage.getItem("login_user"));
-    const full_list = JSON.parse(localStorage.getItem("list_of_register_users"));
+    const full_list = JSON.parse(localStorage.getItem("registrationData"));
     
-    full_list[user_data.username] = user_data;
-    console.log(full_list[user_data.username]);
+    full_list[user_data.trn] = user_data;
 
-    localStorage.setItem("list_of_register_users", JSON.stringify(full_list));
+
+    localStorage.setItem("registrationData", JSON.stringify(full_list));
 }
 
 function logout_user(event){       
@@ -119,4 +120,4 @@ function close_cart(){
 
 init_local_storage();
 
-const is_login = cheak_if_a_user_login();
+cheak_if_a_user_login();
