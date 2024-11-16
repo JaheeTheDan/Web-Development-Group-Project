@@ -77,7 +77,6 @@ function registerNewUser(formElement) {
 }
 
 
-
 /**
  * This function handles the login process for a user. It retrieves the TRN and password from the login form,
  * validates the input, and checks if the TRN and password match any of the registered users in local storage.
@@ -125,3 +124,15 @@ function loginUser(formElement){
         return;
     }
 }
+
+
+document.getElementById('login').addEventListener('submit', (event)=>{
+    event.preventDefault();
+    loginUser(event.target);
+});
+
+
+document.getElementById('signup').addEventListener('submit', (event)=>{
+    event.preventDefault();
+    registerNewUser(event.target);
+});
