@@ -18,6 +18,9 @@ function init_local_storage(){
                 username: DEFAULT_USERNAME,
                 full_name: "Administrator",
                 password: DEFAULT_PASSWORD,
+                age:21,
+                gender: "Male",
+                trn:"000-000-000",
                 cart: []
             };
             localStorage.setItem(key, JSON.stringify({[DEFAULT_USERNAME]: user }));
