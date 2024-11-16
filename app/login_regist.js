@@ -11,17 +11,17 @@
  */
 function registerNewUser(formElement) {
     // Get the signup form data
-    const sign_up_form = new FormData(formElement);
+    const signUpForm = new FormData(formElement);
 
     // Retrieve the list of registered users from local storage
     let registrationData = JSON.parse(localStorage.getItem("registrationData"));
-    let user_trn = sign_up_form.get("trn");
+    let user_trn = signUpForm.get("trn");
 
 
     let formDataObj ={};
 
     try {
-        sign_up_form.forEach((value, key) => {
+        signUpForm.forEach((value, key) => {
             // Check if any field is empty and if so will throw an error
             if (!value){
                 const error = new Error('Please fill all fields'); 
@@ -56,7 +56,7 @@ function registerNewUser(formElement) {
     registrationData[user_trn] = {"cart" : []};
 
     // Copy the form data to the user object in the list
-    for ([key, value] of sign_up_form){
+    for ([key, value] of signUpForm){
         registrationData[user_trn][key]=value;
     };
 
@@ -66,8 +66,8 @@ function registerNewUser(formElement) {
     localStorage.setItem("registrationData", JSON.stringify(registrationData));
 
     // Set the login status and the currently logged-in user in local storage
-    localStorage.setItem("is_a_user_login", true);
-    localStorage.setItem("login_user", JSON.stringify(registrationData[user_trn]));
+    localStorage.setItem("isUserLogin", true);
+    localStorage.setItem("loginUser", JSON.stringify(registrationData[user_trn]));
     // Display a success message to the user
     alert("Account made successfully.");
 
