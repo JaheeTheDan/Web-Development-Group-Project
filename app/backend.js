@@ -57,6 +57,11 @@ function getUserAgeGroup(registrationData) {
     return ageGroups;
 }
 
+function showInvoices(){
+    let invoices = localStorage.getItem("invoices");
+    
+}
+
 
 const registrationData = JSON.parse(localStorage.getItem("registrationData"));
 

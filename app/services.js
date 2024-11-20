@@ -113,20 +113,48 @@ function remove_from_cart(service_name) {
 function generateServcies() {
   const products_div = document.getElementById("products");
 
-  for (const product of products_list) {
-    const productDiv = document.createElement("div");
-    productDiv.innerHTML = `
-        <span>${product.name}</span>
-        <span>\$${product.price} USD</span>
-        <span>${product.description}</span>
-        <span>${product.category}</span>
+//   const courses_sect = document.querySelector("section#courses_sect");
+  const courses_sect = document.getElementById("courses_sect");
+  const mentorship_sect = document.querySelector("section#mentorship_sect");
+  const code_review_sect = document.querySelector("section#code_review_sect");
+
+  let sections = {
+    courses: courses_sect,
+    mentorship: mentorship_sect,
+    code_review: code_review_sect,
+  };
+
+  for (const [serviceName, serviceInfo] of Object.entries(SERVICES)) {
+    const categoryName = serviceInfo.category.toLowerCase().replace(" ", "_");
+    console.log(categoryName);
+
+    if (!sections[categoryName]) {
+      console.log(`${categoryName} not found`);
+    }
+
+    let div = document.createElement("div");
+    div.innerHTML = `
+    <div>
+      <img src="${serviceInfo.images[0]}" alt="${categoryName}_img_1">
+      <h4>${serviceInfo.fullname}</h4>
+      <p>${serviceInfo.description}</p>
+    </div>
+    <button id="${serviceName}_btn" onclick="openPopup(event)">Show more</button>
     `;
-    products_div.appendChild(row);
+    console.log(sections[categoryName]);
+    // sections[categoryName].getElementById(categoryName).appendChild(div);
+
   }
+
 }
+
+// Add the different services to localStorage
+localStorage.setItem("allServices", JSON.stringify(SERVICES));
 
 const add_to_cart_btns = document.querySelectorAll("button.add_to_cart_btn");
 const items_price = document.querySelectorAll(".item_price");
+
+generateServcies();
 
 items_price.forEach((item) => {
   const service_name =
