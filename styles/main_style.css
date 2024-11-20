@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  --blue:#8EACCD;
+  --white:#f8f9fa;
+
+  --main-colour:#6482AD;
+  --accent-colour-1:#7FA1C3;
+  --accent-colour-2:#E2DAD6;
+  --accent-colour-3:#F5EDED;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: var(--white);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.37rem;
+}
+
+
+a{
+  --link-colour : var(--accent-colour-1);
+  color: var(--link-colour);
+  text-decoration: none;
+
+  border-bottom: var(--link-colour) 3px solid;
+  transition: border-color 0.3s;
+}
+
+
+a:hover{
+  border-color: var(--white);
+}
+
+button{
+  --btn-color: var(--blue);
+  background-color: var(--btn-color);
+  color: var(--white);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.3s;
+}
+
+button:hover{
+  background-color: color-mix(in srgb, var(--btn-color) 70%, #ffffff 30%);
+}
+
+
+
+nav#nav_bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: 80%;
+  min-width: 550px;
+  padding: 10px;
+  margin: 20px auto;
+
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+@keyframes rainbow {
+  0% {color: #A587CA;}
+  20%{color: #36CEDC;}
+  40% {color: #8FE968;}
+  60% {color: #FFEA56;}
+  80% {color: #FFB750;}
+  100% {color: #FE797B;}
+}
+
+nav#nav_bar #title_text{
+  font-size: 1.6rem;
+  color: var(--accent-colour-1);
+
+}
+
+nav#nav_bar #title_text:hover{
+  animation: .5s rainbow infinite alternate;
+  cursor:pointer;
+}
+
+
+nav#nav_bar .links{
+  width: 33%;
+  min-width: fit-content;
+}
+
+nav#nav_bar .links:last-child{
+  text-align: right;
+}
+
+nav#nav_bar .links a{
+  margin-inline: 5px ;
+  color: var(--accent-colour-1) !important;
+  border: none !important;
+}
+
+nav#nav_bar .links a.hidden{
+  display: none;
+
+}
+
+
+
+
+.popup {
+  display: none;
+
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.493);
+}
+
+.popup.show {
+  display: block;
+}
+
+
+#cart svg{ 
+  width: 2em;
+  position: absolute;
+  top: 0px;
+  right: 9px;
+  cursor: pointer;
+}
+
+#cart>div {
+  margin: auto;
+
+  background-color: var(--white);
+  border-radius: 1em;
+
+  padding: 20px;
+  width: 60%;
+  min-width: 400px;
+  max-width: 700px;
+
+  position: relative;
+}
+#cart table{
+  margin: auto;
+  text-align: left;
+}
+
+#cart table th, #cart table td {
+  padding: 2px 60px ;
+}
+#cart table td:nth-child(2){
+  white-space: nowrap;
+}
+
+
+#cart #checkout_btn{
+  display: flex;
+  margin: auto;
+  margin-top: 40px;
+}
+
+
+.social_icons a{
+  border: none;
+}
+
+.social_icons svg {
+  transition: all  0.3s;
+}
+
+.social_icons svg:hover{
+  fill: var(--accent-colour-1);
+}
+
+
+
+footer {
+  background-color: var(--main-colour);
+  color: var(--white);
+}
+
+footer img{
+  width: 150px;
+}
+footer > div:first-child {
+  padding: 20px 0;
+  width: 70%;
+  max-width: 800px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer > div:last-child {
+  text-align: center;
+  background-color: #333;
+}
+footer ul {
+  list-style-type: none;
+}
+footer ul li {
+  padding: 5px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+footer .social_icons img {
+  width: 2rem;
+}
+
+footer .social_icons ul {
+  list-style-type: none;
+  margin: auto;
+  width: max-content;
+}
+footer .social_icons li {
+  float: left;
+  padding: 0 10px;
+}
+
+footer .social_icons a {
+  border: none;
+}
+
+footer .social_icons > a {
+  display: flex;
+  justify-items: center;
+}
+footer .social_icons > a > * {
+  padding: 0 10px;
+}
+
+footer .social_icons svg {
+  width: 2rem;
+  transition: all  0.3s;
+}
+footer .social_icons svg:hover{
+  width: 2.3rem;
+  fill: var(--accent-colour-1);
+}

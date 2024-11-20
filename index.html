@@ -1,0 +1,388 @@
+<!--
+Name: Jaheem Shaw
+ID#: 2205642
+Date: Oct 05, 2024
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main_style.css" />
+    <link rel="stylesheet" href="styles/index_style.css" />
+
+    <title>Home</title>
+  </head>
+
+  <body>
+    <nav id="nav_bar">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About us</a>
+      </div>
+      <p id="title_text" onclick="window.location.href='index.html'">
+        webDevMastery
+      </p>
+      <div class="links">
+        <a href="services.html">Services</a>
+        <a href="login.html">Login</a>
+        <a href="" class="hidden" onclick="logout_user(event)">Logout</a>
+        <a href="" class="hidden" onclick="show_cart(event)">Cart</a>
+      </div>
+    </nav>
+
+    <header>
+      <div>
+        <h1>Hello, World</h1>
+        <p>
+          Take your coding skills to the next level with WebDev Mastery. Whether
+          you're a beginner or an experienced developer, our comprehensive
+          courses will guide you through every step of your web development
+          journey. From mastering HTML, CSS, and JavaScript to building
+          full-stack applications, we have everything you need to become a web
+          development pro. <br />
+          Join thousands of learners who've transformed their careers with us.
+          Start learning today and build the future of the web!
+        </p>
+      </div>
+      <div>
+        <div class="social_icons">
+          <a href="https://www.facebook.com/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+              />
+            </svg>
+          </a>
+
+          <a href="https://x.com/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              />
+            </svg>
+          </a>
+
+          <a href="https://www.instagram.com/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+              />
+            </svg>
+          </a>
+
+          <a href="https://www.linkedin.com/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+              />
+            </svg>
+          </a>
+        </div>
+        <button onclick="scroll_to_services_sect()">Scroll for more</button>
+      </div>
+    </header>
+
+    <section id="services_sect">
+      <div id="services_container">
+        <div class="service">
+          <div>
+            <span class="title_text">
+              <h2>Web Development Courses</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"
+                />
+              </svg>
+            </span>
+            <p>
+              Unlock the world of web development with our expert-led courses
+              designed for learners at all levels. Whether you're just starting
+              out or looking to enhance your skills, our curriculum offers a
+              clear path to mastering both frontend and backend technologies.
+            </p>
+          </div>
+          <a href="login.html">Sign Up</a>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="title_text">
+              <h2>Mentorship Program</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM609.3 512l-137.8 0c5.4-9.4 8.6-20.3 8.6-32l0-8c0-60.7-27.1-115.2-69.8-151.8c2.4-.1 4.7-.2 7.1-.2l61.4 0C567.8 320 640 392.2 640 481.3c0 17-13.8 30.7-30.7 30.7zM432 256c-31 0-59-12.6-79.3-32.9C372.4 196.5 384 163.6 384 128c0-26.8-6.6-52.1-18.3-74.3C384.3 40.1 407.2 32 432 32c61.9 0 112 50.1 112 112s-50.1 112-112 112z"
+                />
+              </svg>
+            </span>
+            <p>
+              Take your learning to the next level with our Mentorship Program,
+              designed to give you personalized guidance and support throughout
+              your web development journey. Whether you're just starting out or
+              looking to advance your career, our mentors—experienced industry
+              professionals—are here to help.
+            </p>
+          </div>
+          <a href="login.html">Sign Up</a>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="title_text">
+              <h2>Code Reviews & Feedback</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2s0 0 0 0s0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.2-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9c0 0 0 0 0 0s0 0 0 0l-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"
+                />
+              </svg>
+            </span>
+            <p>
+              Elevate your coding skills with our Code Reviews & Feedback
+              service, designed to help you write cleaner, more efficient code.
+              Whether you're working on a personal project, an assignment, or
+              preparing for a job interview, our expert developers will provide
+              in-depth feedback to enhance your coding practices.
+            </p>
+          </div>
+          <a href="login.html">Sign Up</a>
+        </div>
+      </div>
+      <button onclick="window.location.href='services.html'">Learn more</button>
+    </section>
+
+    <section id="about_us_sect">
+      <div>
+        <h2>About Us</h2>
+        <p>
+          At WebDev Mastery, we believe that anyone can learn to code and build
+          the web of tomorrow. Founded on the principles of accessibility,
+          quality education, and hands-on experience, our platform is dedicated
+          to empowering aspiring web developers through comprehensive courses
+          and personalized support.
+        </p>
+        <a href="about_us.html">Learn more</a>
+      </div>
+    </section>
+
+    
+
+    <section id="testimoniols_sect">
+      <div id="testimoniols">
+        <div id="carousel">
+          <div class="testimoniol active">
+            <h2>
+              "WebDev Mastery has transformed my coding journey! The structured
+              courses made learning fun, and now I feel confident applying for
+              my first web development job!"
+            </h2>
+            <i>Emily Rodriguez, Aspiring Web Developer</i>
+          </div>
+
+          <div class="testimoniol">
+            <h2>
+              "The mentorship program at WebDev Mastery was invaluable. My
+              mentor helped refine my skills and improve my coding style. I even
+              landed a promotion at work!"
+            </h2>
+            <i>James Chen, Software Engineer</i>
+          </div>
+
+          <div class="testimoniol">
+            <h2>
+              "Thanks to WebDev Mastery, I built my own website for my business!
+              The courses were easy to follow, and now I'm attracting more
+              clients. I'm so grateful!"
+            </h2>
+            <i>Sarah Patel, Entrepreneur </i>
+          </div>
+        </div>
+        <div class="controls">
+          <span class="prev" onclick="prev_test()">&#10094;</span>
+          <span class="next" onclick="next_test()">&#10095;</span>
+        </div>
+      </div>
+
+      <div id="companies_images">
+        <img src="images/company_logos/github.png" alt="github logo" />
+        <img src="images/company_logos/freeCodeCamp.png" alt="freeCodeCamp logo" />
+        <img src="images/company_logos/w3Schools.png" alt="w3Schools logo"/>
+      </div>
+    </section>
+
+    <section id="sign_up_sect">
+      <h2>Join WebDev Mastery and start your coding journey today!</h2>
+      <button onclick="window.location.href='login.html'">Sign up</button>
+    </section>
+
+    <footer>
+      <div>
+        <img src="images/logo.png" alt="logo" />
+        <div class="social_icons">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                  <path
+                    d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <br />
+          <br />
+          <a href="mailto:jaheemshaw2@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+              />
+            </svg>
+            jaheemshaw2@gmail.com</a
+          >
+        </div>
+        <ul id="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <p>&copy; 2024 Jaheem Shaw. All rights reserved.</p>
+        <p class="last-updated">Last updated: October 12, 2024</p>
+      </div>
+    </footer>
+
+    <div id="cart" class="popup">
+      <div>
+        <svg
+          onclick="close_cart()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512"
+        >
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          />
+        </svg>
+        <h2>Cart</h2>
+
+        <table id="cart_items">
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </table>
+
+        <button
+          id="checkout_btn"
+          onclick="window.location.href ='invoice.html'"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </body>
+
+  <script src="app/main.js"></script>
+  <script src="app/backend.js"></script>
+  <script>
+    const testimoniols = document.querySelectorAll(".testimoniol");
+    
+    function next_test() {
+      let active = 0;
+      for (let i = 0; i < testimoniols.length; i++) {
+        if (testimoniols[i].classList.contains("active")) {
+          active = i;
+          break;
+        }
+      }
+
+
+      testimoniols[active].classList.remove("active");
+      if (active < testimoniols.length - 1) {
+        testimoniols[active + 1].classList.add("active");
+      } else {
+        testimoniols[0].classList.add("active");
+      }
+    }
+
+    function prev_test() {
+      let active = 0;
+      for (let i = 0; i < testimoniols.length; i++) {
+        if (testimoniols[i].classList.contains("active")) {
+          active = i;
+          break;
+        }
+      }
+      console.log(active);
+
+      testimoniols[active].classList.remove("active");
+      if (active > 0) {
+        testimoniols[active - 1].classList.add("active");
+      } else {
+        testimoniols[testimoniols.length - 1].classList.add("active");
+      }
+    }
+
+    function scroll_to_services_sect() {
+      document.querySelector("#services_sect").scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+
+    if (cheak_if_a_user_login()) {
+      const signup_links = document.querySelectorAll("#services_sect a");
+      signup_links.forEach((link) => {
+        link.href = "services.html";
+        link.innerHTML = "Enroll Now";
+      });
+
+      const signup_btn = document.querySelector("#sign_up_sect button");
+      
+      signup_btn.setAttribute("onclick", "window.location.href='services.html'");
+      signup_btn.innerHTML = "Enroll Now";
+
+    }
+  </script>
+</html>
