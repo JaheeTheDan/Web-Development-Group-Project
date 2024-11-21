@@ -126,8 +126,9 @@ function clearCart() {
 }
 
 function populate_cart() {
-  const login_user = JSON.parse(localStorage.getItem("login_user"));
-  const cart = login_user.cart;
+  // const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
+  const cart = [];
+  let totalAmount = 0;
 
   const cart_items = document.getElementById("cart_items");
   cart_items.children.item("tbody").innerHTML =
@@ -143,14 +144,20 @@ function populate_cart() {
             </td>
         `;
     cart_items.children.item("tbody").append(row);
+
+    totalAmount += item.price;
+
   }
-  calculateTotalAfterTax();
+  
+  calculateTotalAfterTax(totalAmount);
 }
-function calculateTotalAfterTax() {
+function calculateTotalAfterTax(totalAmount) {
   const taxRate = 0.1;
-  const totalAfterTax = totalAmount + totalAmount * taxRate;
-  document.getElementById("total-after-tax").textContent =
-    totalAfterTax.toFixed(2);
+  const tax = taxRate * totalAmount;
+  const totalAfterTax = totalAmount + tax;
+  document.getElementById("sub-total").textContent = `$${totalAmount.toFixed(2)} USD`;
+  document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
+  document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
 }
 
 function show_cart(event) {
@@ -176,6 +183,21 @@ function show_cart(event) {
       <tr>
         <th>Item</th>
         <th>Price</th>
+      </tr>
+    </table>
+
+    <table id="totalTable">
+      <tr>
+        <td>Sub Total</td>
+        <td id="sub-total">$0.00 USD</td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td id="tax">$0.00 USD</td>
+      </tr>
+      <tr>
+        <td>Grand Total</td>
+        <td id="total">$0.00 USD</td>
       </tr>
     </table>
 
