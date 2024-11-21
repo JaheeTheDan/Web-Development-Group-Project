@@ -177,42 +177,9 @@ const SERVICES = {
 // Add the different services to localStorage
 localStorage.setItem("allServices", JSON.stringify(SERVICES));
 
-function add_to_cart(service_name) {
-  const item = {
-    name: service_name,
-    fullname: SERVICES[service_name].fullname,
-    price: SERVICES[service_name].price,
-  };
-  user_cart.push(item);
-
-  localStorage.setItem(
-    "login_user",
-    JSON.stringify({
-      ...JSON.parse(localStorage.getItem("login_user")),
-      cart: user_cart,
-    })
-  );
-}
-
-function remove_from_cart(service_name) {
-  user_cart.forEach((item, index) => {
-    if (item.name === service_name) {
-      user_cart.splice(index, 1);
-    }
-  });
-
-  localStorage.setItem(
-    "login_user",
-    JSON.stringify({
-      ...JSON.parse(localStorage.getItem("login_user")),
-      cart: user_cart,
-    })
-  );
-}
 
 function generateServcies() {
-  // const allServices = JSON.parse(localStorage.getItem("allServices"));
-  const allServices = SERVICES;
+  const allServices = JSON.parse(localStorage.getItem("allServices"));
   const courses_sect = document.getElementById("courses_sect");
   const mentorship_sect = document.getElementById("mentorship_sect");
   const code_review_sect = document.getElementById("code_review_sect");
@@ -310,7 +277,7 @@ if (!cheak_if_a_user_login()) {
     });
   });
 } else {
-  var user_cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
+  let user_cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
   user_cart.forEach((item) => {
     const btn = document.querySelector(`button[data-service="${item.name}"]`);
