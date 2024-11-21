@@ -18,7 +18,7 @@ header p {
   padding-bottom: 10px;
 
 }
-#courses > div, #mentorship_programs > div, #code_reviews > div{
+#courses > div, #mentorship > div, #code_review > div{
   position: relative;
   display: flex;
 
@@ -34,15 +34,15 @@ header p {
 }
 
 #courses_sect #courses,
-#mentorship_sect #mentorship_programs,
-#code_review_sect #code_reviews {
+#mentorship_sect #mentorship,
+#code_review_sect #code_review {
   display: flex;
   justify-content: center;
 }
 
 #courses_sect #courses > div,
-#mentorship_sect #mentorship_programs > div,
-#code_review_sect #code_reviews > div {
+#mentorship_sect #mentorship > div,
+#code_review_sect #code_review > div {
   padding: 25px;
   margin: 20px;
   width: 300px;
@@ -54,8 +54,8 @@ header p {
 }
 
 #courses_sect #courses > div:hover,
-#mentorship_sect #mentorship_programs > div:hover,
-#code_review_sect #code_reviews > div:hover {
+#mentorship_sect #mentorship > div:hover,
+#code_review_sect #code_review > div:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
 }
@@ -108,7 +108,7 @@ header p {
     text-align: center;
     margin-bottom: 10px;
   }
-  #mentorship_sect #mentorship_programs, #code_review_sect #code_reviews {
+  #mentorship_sect #mentorship, #code_review_sect #code_review {
     margin: 0 auto;
   }
 }
