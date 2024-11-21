@@ -177,11 +177,11 @@ const SERVICES = {
 // Add the different services to localStorage
 localStorage.setItem("allServices", JSON.stringify(SERVICES));
 
-function add_to_cart(service_name, service_price, service_fullname) {
+function add_to_cart(service_name) {
   const item = {
     name: service_name,
-    fullname: service_fullname,
-    price: service_price,
+    fullname: SERVICES[service_name].fullname,
+    price: SERVICES[service_name].price,
   };
   user_cart.push(item);
 
@@ -303,7 +303,6 @@ items_price.forEach((item) => {
 });
 
 if (!cheak_if_a_user_login()) {
-  
   add_to_cart_btns.forEach((btn) => {
     btn.innerHTML = "Sign Up";
     btn.addEventListener("click", ()=>{
@@ -320,10 +319,7 @@ if (!cheak_if_a_user_login()) {
 
   add_to_cart_btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
-      const service = SERVICES[event.target.dataset.service];
       const service_name = event.target.dataset.service;
-      const service_fullname = service.fullname;
-      const service_price = service.price;
 
       for (const item of user_cart) {
         if (item.name === service_name) {
@@ -333,7 +329,7 @@ if (!cheak_if_a_user_login()) {
           return;
         }
       }
-      add_to_cart(service_name, service_price, service_fullname);
+      add_to_cart(service_name);
       btn.innerHTML = "Remove from Cart";
 
       update_users_list();
