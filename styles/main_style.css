@@ -173,8 +173,9 @@ nav#nav_bar .links a.hidden{
 }
 
 
-#cart #checkout_btn{
+#cart #cart_btns{
   display: flex;
+  justify-content: space-evenly;
   margin: auto;
   margin-top: 40px;
 }
