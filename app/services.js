@@ -291,10 +291,10 @@ function generateServcies() {
   }
 }
 
+generateServcies();
+
 const add_to_cart_btns = document.querySelectorAll("button.add_to_cart_btn");
 const items_price = document.querySelectorAll(".item_price");
-
-generateServcies();
 
 items_price.forEach((item) => {
   const service_name =
@@ -303,6 +303,7 @@ items_price.forEach((item) => {
 });
 
 if (!cheak_if_a_user_login()) {
+  
   add_to_cart_btns.forEach((btn) => {
     btn.innerHTML = "Sign Up";
     btn.addEventListener("click", ()=>{
