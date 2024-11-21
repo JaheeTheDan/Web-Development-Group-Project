@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* light blue background */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0288d1; /* darker blue for header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.cart-button {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-button img {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+main h1 {
+    color: #0288d1; /* same blue as header */
+    margin-top: 0;
+}
+
+main p {
+    color: #333;
+    margin: 20px 0;
+}
+
+.content {
+    background-color: white;
+    border: 1px solid #b3e5fc; /* light blue border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    transition: transform 0.3s;
+}
+
+.content:hover {
+    transform: scale(1.05);
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #0288d1; /* same blue as header */
+}
+
+footer {
+    background-color: #0288d1; /* same blue as header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer img { 
+    display: block; 
+    margin: 0 auto 20px; 
+    width: 100px;  
+    height: auto; 
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+
+
