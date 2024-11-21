@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #afc5ec;
 }
 
 .cart-container {
@@ -28,11 +28,11 @@ table {
 th, td {
     padding: 10px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 2px solid #eebce3;
 }
 
 th {
-    background-color: #f1f1f1;
+    background-color: #d2e7f8;
 }
 
 .cart-actions {
@@ -45,7 +45,7 @@ button {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
-    border: none;
+    border: 1px solid #b3409a;
     border-radius: 4px;
     cursor: pointer;
 }
