@@ -1,4 +1,5 @@
 // Jaheem Shaw 2205642
+//Comments by Victoria Pryce
 
 /**
  * This function is responsible for registering a new user by collecting user data from the signup form,

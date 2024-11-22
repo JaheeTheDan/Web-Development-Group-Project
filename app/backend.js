@@ -113,7 +113,7 @@ new Chart(document.getElementById("totalUserGenderChart"), {
     },
 });
 
-
+//making a chart
 let data = [];
 for (const [groupName, groupData] of Object.entries(getUserAgeGroup(registrationData))) {
     data.push({x : groupName,

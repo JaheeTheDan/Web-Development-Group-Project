@@ -1,3 +1,7 @@
+//Commenting by Victoria Pryce
+
+//Question 4. Check out Page; user info & shipping details
+
 // Get references to HTML elements
 const checkoutSummaryTable = document.getElementById('checkout-summary').getElementsByTagName('tbody')[0];
 const checkoutTotal = document.getElementById('checkout-total');
