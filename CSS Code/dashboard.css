@@ -12,24 +12,32 @@ header {
     background-color: #0288d1; 
     color: white;
     padding: 20px;
-    text-align: center;
 }
 
-header nav {
+#nav_bar {
+    width: 100%;
+}
+
+#nav_bar .links {
     display: flex;
     justify-content: center;
-    width: 100%;
-    position: relative;
+    gap: 10px;
+    margin: 10px 0;
 }
 
-header nav a {
+#nav_bar .links a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    padding: 5px 10px;
 }
 
-header nav a:hover {
+#nav_bar .links a:hover {
     text-decoration: underline;
+}
+
+#title_text {
+    cursor: pointer;
+    margin: 10px 0;
 }
 
 main {
@@ -39,42 +47,59 @@ main {
     padding: 20px;
 }
 
-.stats {
+#statsInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+#statsInfo div {
     background-color: white;
     border: 1px solid #b3e5fc; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
     padding: 20px;
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
+    width: 45%;
 }
 
-.user-list {
+#statsInfo canvas {
+    width: 100%;
+    height: 400px;
+}
+
+section#invoices {
     background-color: white;
     border: 1px solid #b3e5fc; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
     padding: 20px;
     width: 100%;
     max-width: 800px;
+    margin: 20px auto;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+section#invoices form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-th, td {
+section#invoices form input, section#invoices form button {
+    padding: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+    border-radius: 5px;
 }
 
-th {
-    background-color: #0288d1; 
+section#invoices form button {
+    background-color: #0288d1;
     color: white;
+    cursor: pointer;
+}
+
+section#invoices form button:hover {
+    background-color: #0277bd;
 }
 
 footer {
@@ -95,13 +120,12 @@ footer img {
 footer nav {
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+    gap: 15px;
 }
 
 footer nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
 }
 
 footer nav a:hover {
