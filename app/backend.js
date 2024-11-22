@@ -96,7 +96,6 @@ new Chart(document.getElementById("totalUserGenderChart"), {
 });
 
 
-
 let data = [];
 for (const [groupName, groupData] of Object.entries(getUserAgeGroup(registrationData))) {
     data.push({x : groupName,
@@ -146,4 +145,19 @@ new Chart(document.getElementById("userAgeGroupChart"), {
             },
         },
     },
+});
+
+document.getElementById('invoices-search-form').addEventListener('submit', (event)=>{
+    event.preventDefault();
+    
+    let allInvoices = JSON.parse(localStorage.getItem("allInvoices"));
+    let trn = document.getElementById('trn-search').value;
+    let invoiceDiv = document.getElementById('invoice');
+ 
+    for (let invoice in allInvoices){
+        if (invoice.trn == trn) {
+            console.log(invoice);
+            break
+        }
+    }
 });
