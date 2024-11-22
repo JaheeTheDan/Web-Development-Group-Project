@@ -65,15 +65,15 @@ confirmButton.addEventListener('click', () => {
     // Optionally, you can save the invoice in localStorage, or send it to the server
     localStorage.setItem('invoice', JSON.stringify(invoice));
 
-    // Redirect to a confirmation page or show a success message
+    // Redirect to a invoice  and show a success message
     alert('Checkout successful! Thank you for your purchase!');
-    window.location.href = 'confirmation.html'; // Redirect to a confirmation page
+    window.location.href = 'invoice.html'; // Redirect to a confirmation page
 });
 
 // Function to handle the cancel checkout action
 cancelButton.addEventListener('click', () => {
     // Redirect the user back to the cart page
-    window.location.href = 'cart.html'; // Assuming the cart page is named cart.html
+    window.location.href = 'cart(aalia).html'; 
 });
 
 // Initialize the checkout page by updating the cart summary
