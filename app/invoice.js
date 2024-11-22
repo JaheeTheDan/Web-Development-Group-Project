@@ -16,7 +16,7 @@ document.getElementById("today_date").innerHTML = today;
 
 var full_name = JSON.parse(localStorage.getItem("login_user")).full_name; 
 document.getElementById("to").append(document.createElement("p").innerText = full_name);
-
+''
 
 const login_user = JSON.parse(localStorage.getItem("login_user"));
 const cart = login_user.cart;

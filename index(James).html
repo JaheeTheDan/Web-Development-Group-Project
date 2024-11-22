@@ -18,26 +18,27 @@
         </nav>
     </header>
     <main>
-            <h1>Hello, World</h1>
-            <p>
-              Take your coding skills to the next level with WebDev Mastery. Whether
-              you're a beginner or an experienced developer, our comprehensive
-              courses will guide you through every step of your web development
-              journey. From mastering HTML, CSS, and JavaScript to building
-              full-stack applications, we have everything you need to become a web
-              development pro. <br />
-              Join thousands of learners who've transformed their careers with us.
-              Start learning today and build the future of the web!
-            </p>
+        <h1>Hello, World</h1>
+        <p>
+          Take your coding skills to the next level with WebDev Mastery. Whether
+          you're a beginner or an experienced developer, our comprehensive
+          courses will guide you through every step of your web development
+          journey. From mastering HTML, CSS, and JavaScript to building
+          full-stack applications, we have everything you need to become a web
+          development pro. <br />
+          Join thousands of learners who've transformed their careers with us.
+          Start learning today and build the future of the web!
+        </p>
         <div class="content">
             <img src="../Pics/Web-Development-Course-Pic.jpg" alt="WebDev Course Image">
-            <h4> Web Development Course</h4>
+            <h4>Web Development Course</h4>
             <p>
                 Unlock the world of web development with our expert-led courses
                 designed for learners at all levels. Whether you're just starting
                 out or looking to enhance your skills, our curriculum offers a
                 clear path to mastering both frontend and backend technologies.
             </p>
+            <button class="signup-button">Sign Up</button>
         </div>
         <div class="content">
             <img src="../Pics/Mentorship-program-pic.jpeg" alt="Mentorship Program Image">
@@ -49,6 +50,7 @@
                 looking to advance your career, our mentors—experienced industry
                 professionals—are here to help.
             </p>
+            <button class="signup-button">Sign Up</button>
         </div>
         <div class="content">
             <img src="../Pics/pro_code_review_img_1.jpg" alt="Code Reviews Image">
@@ -60,6 +62,7 @@
                 preparing for a job interview, our expert developers will provide
                 in-depth feedback to enhance your coding practices.
             </p>
+            <button class="signup-button">Sign Up</button>
         </div>
         <h3>About us</h3>
         <p>
@@ -78,5 +81,29 @@
             <a href="About_Us.html">Terms of Service</a>
         </nav>
     </footer>
+    <script>
+        function checkIfAUserLogin() {
+            // Check if an item named "isUserLogin" exists in local storage and its value is "true"
+            return localStorage.getItem('isUserLogin') === 'true';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const signupButtons = document.querySelectorAll(".signup-button");
+
+            if (checkIfAUserLogin()) {
+                signupButtons.forEach((button) => {
+                    button.setAttribute("onclick", "window.location.href='services.html'");
+                    button.innerHTML = "Enroll Now";
+                });
+            } else {
+                signupButtons.forEach((button) => {
+                    button.setAttribute("onclick", "window.location.href='Login_Registration_Page.html'");
+                    button.innerHTML = "Sign Up";
+                });
+            }
+        });
+    </script>
+    <script src="app/main.js"></script>
+    <script src="app/backend.js"></script>
 </body>
 </html>

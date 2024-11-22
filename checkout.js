@@ -8,7 +8,7 @@ const confirmButton = document.getElementById('confirm-checkout');
 const cancelButton = document.getElementById('cancel-checkout');
 
 // Get cart data from localStorage
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('login_user')).cart || [];
 
 // Function to update the checkout summary and total
 function updateCheckoutSummary() {
@@ -33,6 +33,8 @@ function updateCheckoutSummary() {
 
 // Function to handle the confirm checkout action
 confirmButton.addEventListener('click', () => {
+    let user = JSON.parse(localStorage.getItem("login_user"));
+    let allInvoice = JSON.parse(localStorage.getItem("allInvoices")) || [];
     const name = nameInput.value;
     const address = addressInput.value;
     const amountPaid = parseFloat(amountPaidInput.value);
@@ -51,6 +53,7 @@ confirmButton.addEventListener('click', () => {
     // Generate the invoice
     const invoice = {
         name,
+        trn: user.trn,
         address,
         items: cart,
         totalCost,
@@ -63,18 +66,26 @@ confirmButton.addEventListener('click', () => {
     console.log('Invoice Generated:', invoice);
 
     // Optionally, you can save the invoice in localStorage, or send it to the server
-    localStorage.setItem('invoice', JSON.stringify(invoice));
+    allInvoice.push(invoice);
+    localStorage.setItem("allInvoices", JSON.stringify(allInvoice));
+    if (!user.invoices){
+        user.invoices = [];
+        user.invoices.push(invoice);
+    }else{
+        user.invoices.push(invoice);
+    }
+    
+    localStorage.setItem("login_user", JSON.stringify(user));
 
-    // Redirect to a invoice  and show a success message
-    alert('Checkout successful! Thank you for your purchase!');
-    window.location.href = 'invoice.html'; // Redirect to a confirmation page
+   // Redirect to invoice
+   alert('Checkout successful! Thank you for your purchase!');
+   window.location.href = 'invoice.html'; 
 });
 
 // Function to handle the cancel checkout action
 cancelButton.addEventListener('click', () => {
-    // Redirect the user back to the cart page
-    window.location.href = 'cart(aalia).html'; 
-});
+   // Redirect the user back to the cart page
+   window.location.href = 'Services(James).html'; 
 
 // Initialize the checkout page by updating the cart summary
 updateCheckoutSummary();
