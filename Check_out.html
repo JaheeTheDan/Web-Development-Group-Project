@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="C:\Users\Aaliyah\Downloads\Group Project Code\Group Project Code\Web-Development-Group-Project\CSS Code\check_out.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h2>Checkout Summary</h2>
+
+        <!-- Cart Summary -->
+        <table id="checkout-summary">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will be populated here by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Shipping Details Form -->
+        <h3>Shipping Information</h3>
+        <form id="shipping-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea><br>
+
+            <label for="amount-paid">Amount Paid ($):</label>
+            <input type="number" id="amount-paid" required><br>
+
+            <p>Total Cost: $<span id="checkout-total">0.00</span></p>
+        </form>
+
+        <!-- Buttons -->
+        <div class="checkout-actions">
+            <button id="confirm-checkout">Confirm</button>
+            <button id="cancel-checkout">Cancel</button>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
