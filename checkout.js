@@ -52,6 +52,7 @@ confirmButton.addEventListener('click', () => {
 
     // Generate the invoice
     const invoice = {
+        invoice_num : String(Math.floor(Math.random() * 9999)).padStart(4, '0'),
         name,
         trn: user.trn,
         address,
@@ -77,9 +78,9 @@ confirmButton.addEventListener('click', () => {
     
     localStorage.setItem("login_user", JSON.stringify(user));
 
-   // Redirect to invoice
-   alert('Checkout successful! Thank you for your purchase!');
-   window.location.href = 'invoice.html'; 
+    // Redirect to a confirmation page or show a success message
+    alert('Checkout successful! Thank you for your purchase!');
+    window.location.href = 'invoice.html'; // Redirect to a invoice page
 });
 
 // Function for cancel checkout action

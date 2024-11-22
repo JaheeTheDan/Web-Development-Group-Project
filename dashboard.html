@@ -6,13 +6,42 @@
     <title>dashboard</title>
   </head>
   <body>
+    <nav id="nav_bar">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about_us.html">About us</a>
+      </div>
+      <p id="title_text" onclick="window.location.href='index.html'">
+        webDevMastery
+      </p>
+      <div class="links">
+        <a href="services.html">Services</a>
+        <a href="login.html">Login</a>
+        <a href="" class="hidden" onclick="logout_user(event)">Logout</a>
+        <a href="" class="hidden" onclick="show_cart(event)">Cart</a>
+      </div>
+    </nav>
 
-    <div>
-        <canvas id="totalUserGenderChart"></canvas>
+    <div id="statsInfo">
+      <div>
+          <canvas id="totalUserGenderChart"></canvas>
+      </div>
+      <div>
+        <canvas id="userAgeGroupChart"></canvas>
+      </div>
     </div>
-    <div>
-      <canvas id="userAgeGroupChart"></canvas>
-    </div>
+
+    <section id="invoices">
+      <form id="invoices-search-form" action="">
+        <label for="search_invoice">Search Invoice:</label>
+        <input type="text" id="search_invoice" name="search_invoice" placeholder="Enter Invoice TRN" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="invoice" >
+        
+      </div>
+    </section>
 
     <script src="app/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
