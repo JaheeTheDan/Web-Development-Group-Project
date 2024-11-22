@@ -37,6 +37,7 @@ function registerNewUser(formElement) {
                 throw error;
                 
             } else if (key === 'age' && value < 18){
+                // TODO: Change to dob
                 // Check if the age is greater than 18 
                 const error = new Error('You must be at least 18 years old.'); 
                 throw error;                
