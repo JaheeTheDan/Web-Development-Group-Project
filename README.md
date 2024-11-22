@@ -31,3 +31,8 @@ User enters Trn and password to access account.
 In the case that the credential dont match the ones inputed on registering, an error message will be displayed and after 3 attempts the user is sent to Error page where a link back to the home page is displayed.
 
 Once user is logged in successfully, they are able to navigate the through the About Us Page, Home Page, Service Page and Cart.
+
+About Us page displays the details of each member of the group.
+Home page shows a welcome message for the user, introducing them to the company. After there is a preview of the services offered.
+
+User could press the 'Learn More' 
