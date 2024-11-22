@@ -1,3 +1,4 @@
+//counts the number of users by gender 
 function getTotalUserGender(registrationData) {
     let genders = {Male: 0, Female:0};
 
@@ -95,7 +96,7 @@ new Chart(document.getElementById("totalUserGenderChart"), {
     },
 });
 
-
+//making a chart
 let data = [];
 for (const [groupName, groupData] of Object.entries(getUserAgeGroup(registrationData))) {
     data.push({x : groupName,
