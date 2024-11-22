@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>dashboard</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="CSS Code/dashboard.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <nav id="nav_bar">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about_us.html">About us</a>
+            </div>
+            <div class="links">
+                <a href="services.html">Services</a>
+                <a href="login.html">Login</a>
+                <a href="" class="hidden" onclick="logout_user(event)">Logout</a>
+                <a href="" class="hidden" onclick="show_cart(event)">Cart</a>
+            </div>
+        </nav>
+    </header>
 
-    <div>
-        <canvas id="totalUserGenderChart"></canvas>
-    </div>
-    <div>
-      <canvas id="userAgeGroupChart"></canvas>
-    </div>
+    <main>
+        <div id="statsInfo">
+            <div>
+                <canvas id="totalUserGenderChart"></canvas>
+            </div>
+            <div>
+                <canvas id="userAgeGroupChart"></canvas>
+            </div>
+        </div>
+
+        <section id="invoices">
+            <form id="invoices-search-form" action="">
+                <label for="search_invoice">Search Invoice:</label>
+                <input type="text" id="search_invoice" name="search_invoice" placeholder="Enter Invoice TRN" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="invoice">
+                <!-- Invoice details will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="Pics/logo.png" alt="Logo">
+        <p>&copy; 2024 My Website</p>
+        <nav>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </nav>
+    </footer>
 
     <script src="app/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="app/backend.js" ></script>
-  </body>
+    <script src="app/backend.js"></script>
+</body>
 </html>

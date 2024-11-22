@@ -71,7 +71,7 @@ clearCartButton.addEventListener('click', () => {
 // Function to handle checkout (redirect to checkout page)
 checkoutButton.addEventListener('click', () => {
     if (cart.length > 0) {
-        window.location.href = 'checkout.html'; // Redirect to checkout page
+        window.location.href = 'Check_out.html'; // Redirect to checkout page
     } else {
         alert('Your cart is empty!');
     }
