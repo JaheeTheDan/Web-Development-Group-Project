@@ -82,10 +82,11 @@ confirmButton.addEventListener('click', () => {
    window.location.href = 'invoice.html'; 
 });
 
-// Function to handle the cancel checkout action
+// Function for cancel checkout action
 cancelButton.addEventListener('click', () => {
    // Redirect the user back to the cart page
-   window.location.href = 'Services(James).html'; 
+   window.location.href = 'services.html'; 
+});
 
-// Initialize the checkout page by updating the cart summary
+// updating the cart summary
 updateCheckoutSummary();
