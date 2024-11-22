@@ -1,5 +1,5 @@
 // Jaheem Shaw 2205642
-//Comments vy VIctoria Pryce
+//Comments by Victoria Pryce
 const SERVICES_PRICE = {
   fronted: 100,
   backend: 200,
@@ -11,6 +11,7 @@ const SERVICES_PRICE = {
   code_review_2: 250,
 };
 
+// make the services into an 'array' 
 const SERVICES = {
   fronted: {
     fullname: "Fronted Development Course",

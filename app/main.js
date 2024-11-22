@@ -2,6 +2,7 @@
 //Commenting done by Victoria Pryce - 2307070
 
 // Initialize local storage with default data if not already present
+const DEFAULT_TRN = "123-456-789";
 const DEFAULT_USERNAME = "admin";
 const DEFAULT_PASSWORD = "admin_123";
 
@@ -18,6 +19,7 @@ function init_local_storage() {
       // Create a new user with default credentials
       const user = {
         username: DEFAULT_USERNAME,
+        trn: DEFAULT_TRN,
         full_name: "Administrator",
         password: DEFAULT_PASSWORD,
         age: 21,
