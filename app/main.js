@@ -1,6 +1,10 @@
 // Jaheem Shaw 2205642
+//Commenting done by Victoria Pryce - 2307070
+
+// Initialize local storage with default data if not already present
 const DEFAULT_USERNAME = "admin";
 const DEFAULT_PASSWORD = "admin_123";
+
 
 function init_local_storage() {
   const list_of_init_items_key = [
@@ -32,6 +36,7 @@ function init_local_storage() {
   }
 }
 
+//checks local storage if a user is logged
 function cheak_if_a_user_login() {
   const is_a_user_login = JSON.parse(localStorage.getItem("is_a_user_login"));
   const hidden_links = document.querySelectorAll("a.hidden");
@@ -51,7 +56,7 @@ function cheak_if_a_user_login() {
   return JSON.parse(is_a_user_login);
 }
 
-// TODO: Add a check_if_admin_login function
+//updates registration list in local storage
 
 function update_users_list() {
   const user_data = JSON.parse(localStorage.getItem("login_user"));
@@ -62,6 +67,7 @@ function update_users_list() {
   localStorage.setItem("registrationData", JSON.stringify(full_list));
 }
 
+//checls if the logged-in user is an admin 
 function logout_user(event) {
   event.preventDefault();
   if (confirm("Are you sure you want to logout?")) {
@@ -75,6 +81,7 @@ function logout_user(event) {
   }
 }
 
+//adds service items to user cart and stores in local storage
 function add_to_cart(service_name) {
   let user_cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
@@ -94,6 +101,7 @@ function add_to_cart(service_name) {
   );
 }
 
+//removes an item from cart
 function remove_from_cart(service_name) {
   let user_cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
@@ -112,6 +120,8 @@ function remove_from_cart(service_name) {
   );
 }
 
+
+//clears cart data
 function clearCart() {
   if (confirm("Are you sure you want to clear your cart?")) {
     localStorage.setItem(
@@ -125,6 +135,7 @@ function clearCart() {
   }
 }
 
+//populates the cart table with items from user cart & calc total amount of items in the cart
 function populate_cart() {
   // TODO: Remove the commented comment below
   const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
@@ -152,24 +163,25 @@ function populate_cart() {
   calculateTotalAfterTax(totalAmount);
 }
 
-function calculateTotalAfterTax() {
-  const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
+// redundanct function but I dont want to delet it yet
+// function calculateTotalAfterTax() {
+//   const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
-  let subTolal = 0;
-  const taxRate = 0.1;
-  let tax =0 ;
-  let totalAfterTax = 0;
+//   let subTolal = 0;
+//   const taxRate = 0.1;
+//   let tax =0 ;
+//   let totalAfterTax = 0;
 
-  for (const item of cart) {subTolal += item.price;}
+//   for (const item of cart) {subTolal += item.price;}
 
-  tax = taxRate * subTolal;
-  totalAfterTax = subTolal + tax;
+//   tax = taxRate * subTolal;
+//   totalAfterTax = subTolal + tax;
 
 
-  document.getElementById("sub-total").textContent = `$${subTolal.toFixed(2)} USD`;
-  document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
-  document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
-}
+//   document.getElementById("sub-total").textContent = `$${subTolal.toFixed(2)} USD`;
+//   document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
+//   document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
+// }
 
 function show_cart(event) {
   event.preventDefault();

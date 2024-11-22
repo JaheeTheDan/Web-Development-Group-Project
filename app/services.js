@@ -1,4 +1,5 @@
 // Jaheem Shaw 2205642
+//Comments vy VIctoria Pryce
 const SERVICES_PRICE = {
   fronted: 100,
   backend: 200,

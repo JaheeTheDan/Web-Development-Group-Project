@@ -1,12 +1,12 @@
-function clear_cart() {
-  if (confirm("Are you sure you want to clear your cart?")) {
-    const login_user = JSON.parse(localStorage.getItem("login_user"));
-    login_user.cart = [];
-    localStorage.setItem("login_user", JSON.stringify(login_user));
-
-    update_users_list();
-    window.location.reload();
-  }
+function clear_cart(){
+    if (confirm("Are you sure you want to clear your cart?")) {
+        const login_user = JSON.parse(localStorage.getItem("login_user"));
+        login_user.cart = [];
+        localStorage.setItem("login_user", JSON.stringify(login_user));
+    
+        update_users_list();     
+        window.location.reload();
+    }   
 }
 
 function calculateTotalAfterTax() {
@@ -63,3 +63,17 @@ for (const item of cart) {
 }
 calculateTotalAfterTax();
 
+
+document.getElementById("total_price").textContent = `\$${total} USD`;
+
+// Calculate and display tax (5%) and after-tax total
+const taxRate = 0.05;
+const tax = total * taxRate;
+const afterTaxTotal = total + tax;
+
+const afterTaxSection = document.createElement("div");
+afterTaxSection.innerHTML = `
+    <p><strong>Tax (5%):</strong> \$${tax.toFixed(2)} USD</p>
+    <p><strong>After Tax Total:</strong> \$${afterTaxTotal.toFixed(2)} USD</p>
+`;
+document.getElementById("total_price").insertAdjacentElement('afterend', afterTaxSection);
