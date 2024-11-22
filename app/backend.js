@@ -1,10 +1,28 @@
+/**
+ * Calculates the total number of users grouped by gender from the registration data.
+ *
+ * @param {Object} registrationData - An object containing user registration data.
+ *
+ * @returns {Object} An object with gender keys and their corresponding counts.
+ *
+ * @example
+ * const registrationData = {
+ *   user1: { gender: 'Male' },
+ *   user2: { gender: 'Female' },
+ *   user3: { gender: 'Male' },
+ *   admin: { gender: 'Male' },
+ * };
+ *
+ * getTotalUserGender(registrationData);
+ * Returns: { Male: 2, Female: 1 }
+ */
 function getTotalUserGender(registrationData) {
     let genders = {Male: 0, Female:0};
 
     for (const [user, userInfo] of Object.entries(registrationData)) {
         if (user === "admin") {
             // TODO: Remember to uncomment continue
-            // continue;
+            continue;
         }
         genders[userInfo.gender] = userInfo.gender in genders ? genders[userInfo.gender]+1 : 1;
     }
@@ -23,7 +41,7 @@ function getUserAgeGroup(registrationData) {
     for (const [user, userInfo] of Object.entries(registrationData)) {
         if (user === "admin") {
             // TODO: Remember to uncomment continue
-            // continue;
+            continue;
         }
         let age = userInfo.age;
 
