@@ -127,8 +127,7 @@ function clearCart() {
 
 function populate_cart() {
   // TODO: Remove the commented comment below
-  // const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
-  const cart = [];
+  const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
   let totalAmount = 0;
 
   const cart_items = document.getElementById("cart_items");
@@ -154,8 +153,7 @@ function populate_cart() {
 }
 
 function calculateTotalAfterTax() {
-  // const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
-  const cart = [];
+  const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
   let subTolal = 0;
   const taxRate = 0.1;
