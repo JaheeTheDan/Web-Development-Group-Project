@@ -31,7 +31,7 @@ function registerNewUser(formElement) {
 
 
   let formDataObj = {};
-  formDataObj[age] = userAge;
+  formDataObj.age = userAge;
 
   try {
     signUpForm.forEach((value, key) => {
