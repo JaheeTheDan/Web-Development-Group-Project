@@ -126,6 +126,7 @@ function clearCart() {
 }
 
 function populate_cart() {
+  // TODO: Remove the commented comment below
   // const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
   const cart = [];
   let totalAmount = 0;
@@ -151,11 +152,23 @@ function populate_cart() {
   
   calculateTotalAfterTax(totalAmount);
 }
-function calculateTotalAfterTax(totalAmount) {
+
+function calculateTotalAfterTax() {
+  // const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
+  const cart = [];
+
+  let subTolal = 0;
   const taxRate = 0.1;
-  const tax = taxRate * totalAmount;
-  const totalAfterTax = totalAmount + tax;
-  document.getElementById("sub-total").textContent = `$${totalAmount.toFixed(2)} USD`;
+  let tax =0 ;
+  let totalAfterTax = 0;
+
+  for (const item of cart) {subTolal += item.price;}
+
+  tax = taxRate * subTolal;
+  totalAfterTax = subTolal + tax;
+
+
+  document.getElementById("sub-total").textContent = `$${subTolal.toFixed(2)} USD`;
   document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
   document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
 }
@@ -204,7 +217,7 @@ function show_cart(event) {
     <div id="cart_btns">
       <button
         id="clear-all_btn"
-        onclick="clear_cart()"
+        onclick="clear_cart();populate_cart()"
       >
         Clear All
       </button>
