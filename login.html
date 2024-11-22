@@ -34,7 +34,7 @@ Date: Oct 09, 2024
       <div id="col">
         <form id="login">
           <h1>Login</h1>
-          <input name="username" type="text" placeholder="Username" />
+          <input type="text" id="new-trn" pattern="\d{3}-\d{3}-\d{3}" required><br>
           <input name="password" type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit" id="login_btn">Login</button>
@@ -50,8 +50,21 @@ Date: Oct 09, 2024
         <form id="signup" class="hidden" action="#">
           <h1>Sign Up</h1>
           <input name="full_name" type="text" placeholder="Name" />
+          <input name="trn" type="text" placeholder="TRN" />
+          <input type="email" id="email"  placeholder="Email" required>
           <input name="username" type="text" placeholder="Username" />
+          <input name="phone number" type="text" placeholder="Phone Number" />
+
           <input name="password" type="password" placeholder="Password" />
+          <label for="dob">Date of Brith:</label>
+          <input name="dob" type="date" placeholder="Date of Brith" />
+          
+          <label for="gender">Select a gender:</label>
+          <select name="gender" id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
           <button id="sign_up_btn">Sign Up</button>
         </form>
         <div id="signup_text">

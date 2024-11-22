@@ -23,4 +23,11 @@ Tool Used: Chart API
 
 Regular User Experience explained:
 
-User 
+Registering :
+User creates an account using Name, username, password, trn, gender and date of birth (which is used to calculate the age of user so their age is added to the stats on the dashboard)
+
+login:
+User enters Trn and password to access account.
+In the case that the credential dont match the ones inputed on registering, an error message will be displayed and after 3 attempts the user is sent to Error page where a link back to the home page is displayed.
+
+Once user is logged in successfully, they are able to navigate the through the About Us Page, Home Page, Service Page and Cart.
