@@ -1,5 +1,8 @@
 # Web-Development-Group-Project
+
 Web Development Group Project
+
+Link to website - https://jaheethedan.github.io/Web-Development-Group-Project/
 
 This application is for a website 'WebDev Mastery'.
 Programmed by:
@@ -11,16 +14,17 @@ James Cameron - 1804616
 The Programme explained:
 NB: No frameworks used
 
-In the case that the admin would like to access the Dashboard, they would use the following credentials - 
+In the case that the admin would like to access the Dashboard, they would use the following credentials -
 
 Admin username = "admin"
 Admin Password = "admin_123"
 
 Once on the dashboard, they would be able to view the user frequency which includes:
+
 - How many registered users fall under specific gender categories (e.g. Male, Female, Other)
 - Registered users under different age groups (18-25, 26-35, 36-50, 50+)
-This is displayed in the format of bargraphs.
-Tool Used: Chart.js
+  This is displayed in the format of bargraphs.
+  Tool Used: Chart.js
 
 Regular User Experience explained:
 
@@ -36,7 +40,7 @@ Once user is logged in successfully, they are able to navigate the through the A
 About Us page displays the details of each member of the group.
 Home page shows a welcome message for the user, introducing them to the company. After there is a preview of the services offered.
 
-User could press the 'Learn More' button and they would be redirected to the Services page where all the services 
+User could press the 'Learn More' button and they would be redirected to the Services page where all the services
 are listed.
 All the services in the product listing have descriptions, prices and add to cart buttons.
 When the add to cart button is pressed, the item is added to the users cart along with its price.
