@@ -49,7 +49,8 @@ document
   .getElementById("to")
   .append((document.createElement("p").innerText = invoice.name));
 
-const cart = invoice.cart;
+const cart = invoice.items;
+console.log(invoice);
 const invoice_table = document
   .getElementById("invoice")
   .getElementsByTagName("tbody")[0];
@@ -60,11 +61,12 @@ for (const item of cart) {
         <td>${item.fullname}</td>
         <td>\$${item.price} USD</td>
     `;
+    document.querySelector("#invoice > table:nth-child(5) > tbody").append(row);
 }
 calculateTotalAfterTax();
 
 
-document.getElementById("total_price").textContent = `\$${total} USD`;
+// document.getElementById("total_price").textContent = `\$${total} USD`;
 
 // Calculate and display tax (5%) and after-tax total
 const taxRate = 0.05;
