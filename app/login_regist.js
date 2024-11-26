@@ -17,7 +17,6 @@ function registerNewUser(formElement) {
   // Retrieve the list of registered users from local storage
   let registrationData = JSON.parse(localStorage.getItem("registrationData"));
   let user_trn = signUpForm.get("trn");
-  console.log(signUpForm.get("dob"));
 
   // Calculate the age from the date of birth
   const dob = new Date(signUpForm.get("dob"));
@@ -107,7 +106,7 @@ function loginUser(formElement) {
     alert("Please enter both TRN and password.");
     return;
   }
-
+  console.log(registrationData[trn]);
   // Check if the trn and password match any of the registered users in the list
   if (!registrationData[trn]) {
     alert("Invalid trn, doesn't match any of the registered users");
@@ -130,6 +129,19 @@ function loginUser(formElement) {
   }
 }
 
+function admin_login(e){
+  e.preventDefault();
+  let adm_user =  prompt("Please enter Admin Username");
+  let adm_password = prompt("Please enter Admin Password");
+
+  if (adm_user == DEFAULT_USERNAME && adm_password == DEFAULT_PASSWORD){
+    alert("You are logged in successfully as an admin");
+    window.location.href = "dashboard.html";
+  }else{
+    alert("Invalid Admin Username or Password");
+  }
+}
+
 document.getElementById("login").addEventListener("submit", (event) => {
   event.preventDefault();
   loginUser(event.target);
@@ -139,3 +151,5 @@ document.getElementById("signup").addEventListener("submit", (event) => {
   event.preventDefault();
   registerNewUser(event.target);
 });
+
+

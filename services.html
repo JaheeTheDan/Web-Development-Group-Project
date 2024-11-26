@@ -176,6 +176,10 @@ Date: Oct 11, 2024
   <script src="app/services.js"></script>
 
   <script>
+
+
+
+// This function cycles through an array of images, displaying the next image in the sequence.
     function next_img(images) {
       for (let i = 0; i < images.length; i++) {
         if (images[i].classList.contains("active")) {
@@ -193,20 +197,25 @@ Date: Oct 11, 2024
 
     carousel.forEach((item) => {
       const images = item.getElementsByTagName("img");
-
+      // Cycles through the images every 3seconds
       setInterval(next_img, 3000, images);
     });
   </script>
 
   <script>
+    //  This function opens a popup window based on the event target's id.
     function openPopup(event) {
+      // Get the id of the target element and remove the last 4 characters
       const content_to_show = document.getElementById(
         event.target.id.slice(0, -4)
       );
       content_to_show.classList.add("show");
+
+      // Log the content element to the console for debugging purposes
       console.log(content_to_show);
     }
 
+    // Go through the popup divs and an event listener to the close btn to close the popup
     for (const popup of document.querySelectorAll(".popup")) {
       const x_btn = popup.getElementsByClassName("close_btn")[0];
       x_btn.addEventListener("click", () => {

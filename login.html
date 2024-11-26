@@ -34,11 +34,13 @@ Date: Oct 09, 2024
       <div id="col">
         <form id="login">
           <h1>Login</h1>
-          <input type="text" id="new-trn" pattern="\d{3}-\d{3}-\d{3}" required><br>
+          <input name="trn" type="text" id="trn" pattern="\d{3}-\d{3}-\d{3}" placeholder="TRN" required><br>
           <input name="password" type="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
-          <button type="submit" id="login_btn">Login</button>
+          <button type="submit" id="login_btn" >Login</button>
+          <button class="bth" onclick="admin_login(event)">Admin Login</button>
         </form>
+
         <div id="login_text" class="hidden">
           <h2>Welcome Back!</h2>
           <p>To keep connected with us please login with your personal info</p>
@@ -74,6 +76,11 @@ Date: Oct 09, 2024
         </div>
       </div>
     </div>
+
+    
+
+    
+
 
     <footer>
       <div>

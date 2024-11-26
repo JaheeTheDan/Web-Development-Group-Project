@@ -77,8 +77,8 @@ nav#nav_bar{
 }
 
 @keyframes rainbow {
-  0% {color: #A587CA;}
-  20%{color: #36CEDC;}
+  0%  {color: #A587CA;}
+  20% {color: #36CEDC;}
   40% {color: #8FE968;}
   60% {color: #FFEA56;}
   80% {color: #FFB750;}

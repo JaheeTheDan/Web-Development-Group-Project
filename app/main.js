@@ -24,10 +24,9 @@ function init_local_storage() {
         password: DEFAULT_PASSWORD,
         age: 21,
         gender: "Male",
-        trn: "000-000-000",
         cart: [],
       };
-      localStorage.setItem(key, JSON.stringify({ [DEFAULT_USERNAME]: user }));
+      localStorage.setItem(key, JSON.stringify({ [DEFAULT_TRN]: user }));
     } else if (key === "is_a_user_login" && !localStorage.getItem(key)) {
       localStorage.setItem(key, JSON.stringify(false));
     } else if (!localStorage.getItem(key)) {
@@ -47,7 +46,7 @@ function cheak_if_a_user_login() {
   if (is_a_user_login) {
     hidden_links.forEach((link) => {
       link.classList.remove("hidden");
-    });
+    });                                                                            
     login_link.classList.add("hidden");
   } else {
     hidden_links.forEach((link) => {
@@ -166,24 +165,25 @@ function populate_cart() {
 }
 
 // redundanct function but I dont want to delet it yet
-// function calculateTotalAfterTax() {
-//   const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
+// Who said it is redunanct, It very much neede.
+function calculateTotalAfterTax() {
+  const cart = JSON.parse(localStorage.getItem("login_user")).cart || [];
 
-//   let subTolal = 0;
-//   const taxRate = 0.1;
-//   let tax =0 ;
-//   let totalAfterTax = 0;
+  let subTolal = 0;
+  const taxRate = 0.1;
+  let tax =0 ;
+  let totalAfterTax = 0;
 
-//   for (const item of cart) {subTolal += item.price;}
+  for (const item of cart) {subTolal += item.price;}
 
-//   tax = taxRate * subTolal;
-//   totalAfterTax = subTolal + tax;
+  tax = taxRate * subTolal;
+  totalAfterTax = subTolal + tax;
 
 
-//   document.getElementById("sub-total").textContent = `$${subTolal.toFixed(2)} USD`;
-//   document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
-//   document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
-// }
+  document.getElementById("sub-total").textContent = `$${subTolal.toFixed(2)} USD`;
+  document.getElementById("tax").textContent = `$${tax.toFixed(2)} USD`;
+  document.getElementById("total").textContent = `$${totalAfterTax.toFixed(2)} USD`;
+}
 
 function show_cart(event) {
   event.preventDefault();
@@ -235,7 +235,7 @@ function show_cart(event) {
       </button>
       <button
         id="checkout_btn"
-        onclick="window.location.href ='invoice.html'"
+        onclick="window.location.href ='Check_out.html'"
       >
         Checkout
       </button>
